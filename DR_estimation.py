@@ -8,6 +8,9 @@ import nibabel as nib
 import numpy as np
 import sys
 
+import logging
+log = logging.getLogger(__name__)
+
 def get_a(sigma, Mn):
     x = Mn/sigma
     if x >= 3:
@@ -18,6 +21,7 @@ def get_a(sigma, Mn):
 
 def calc_dr(img_path, headmask_path):
     # ========================= initialize inputs =========================
+    log.info('Loading input images')
     ## load image
     img = nib.load(img_path)
     img_data = img.get_fdata()
@@ -46,6 +50,7 @@ def calc_dr(img_path, headmask_path):
     sigma_squared = sigma**2
     N = img_data.size # total number of image points
 
+    log.info('Calculating the dynamic range...')
     out = []
     for n in np.nditer(img_data): # for each image point, where n = magnitude signal
         n_squared = n**2
@@ -62,4 +67,4 @@ img_path = sys.argv[1]
 headmask_path = sys.argv[2]
 
 DR = calc_dr(img_path, headmask_path)
-log.info(f'{str(DR)}')
+log.info(f"Estimated dynamic range of the input image: {str(DR)}")
