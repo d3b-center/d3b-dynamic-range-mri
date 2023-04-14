@@ -45,7 +45,7 @@ if [[ -f $im_file ]] && \
 
   echo "$CONTAINER  Calculating dynamic range of the input file"
   python3 DR_estimation.py $im_file $mask_file
-
+  STATUS=0
 ################# Finish up #################
   STATUS=$?
 else
@@ -54,8 +54,7 @@ else
 fi
 
 # Check exit status
-if [[ $STATUS == 0 ]]
-  then
+if [[ $STATUS == 0 ]] ; then
     echo -e "$CONTAINER  Done!"
 
   else
