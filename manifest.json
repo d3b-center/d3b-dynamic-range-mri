@@ -25,21 +25,9 @@
     },
     "head_mask": {
       "base": "file",
-      "description": "Binary mask of head (1 vs. background/0).",
+      "description": "Binary mask of head (1) vs. background (0).",
       "optional": false,
       "type": { "enum": ["nifti"] }
     }
-  },
-  "environment":{
-    "HOME":"/root",
-    "HOSTNAME":"0b633f948575",
-    "MESA_GL_VERSION_OVERRIDE":"3.2",
-    "OLDPWD":"/opt/captk/1.8.1/usr",
-    "PATH":"/opt/captk/1.8.1/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
-    "PWD":"/opt/captk/1.8.1/usr/bin",
-    "QT_GRAPHICSSYSTEM":"native",
-    "QT_X11_NO_MITSHM":"1",
-    "SHLVL":"1",
-    "TERM":"xterm"
   }
 }

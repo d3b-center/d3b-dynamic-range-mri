@@ -68,3 +68,4 @@ headmask_path = sys.argv[2]
 
 DR = calc_dr(img_path, headmask_path)
 log.info(f"Estimated dynamic range of the input image: {str(DR)}")
+print(f"Estimated dynamic range of the input image: {str(DR)}")
