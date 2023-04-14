@@ -1,9 +1,4 @@
 #!/bin/bash
-#
-#	template based on:  https://github.com/scitran-apps/fsl-bet/blob/master/run
-#
-#   DeepMedic needs at least 6 GB memory limit (fails at 4GB)
-#
 
 CONTAINER="[d3b-dynamic-range-mri]"
 echo -e "$CONTAINER  Initiated"
@@ -12,7 +7,7 @@ echo -e "$CONTAINER  Initiated"
 ## Built to flywheel-v0 spec.
 FLYWHEEL_BASE=/flywheel/v0
 OUTPUT_DIR=$FLYWHEEL_BASE/output
-im_DIR=$FLYWHEEL_BASE/input/image
+im_DIR=$FLYWHEEL_BASE/input/MR_image
 mask_DIR=$FLYWHEEL_BASE/input/head_mask
 MANIFEST=$FLYWHEEL_BASE/manifest.json
 # CONFIG_FILE=$FLYWHEEL_BASE/config.json
@@ -48,13 +43,8 @@ mask_file=$(find $mask_DIR/* -maxdepth 0 -type f -name "*.nii*")
 if [[ -f $im_file ]] && \
    [[ -f $mask_file ]] ; then
 
-  echo "$CONTAINER  Z-scoring input files and generating DeepMedic configuration files"
+  echo "$CONTAINER  Calculating dynamic range of the input file"
   python3 DR_estimation.py $im_file $mask_file
-
-  mv output/predictions/PediatricSSDMv1/predictions/brainMask_Segm_Segm.nii.gz .
-  rm -r output
-  mkdir output
-  mv brainMask_Segm_Segm.nii.gz ${out_path}
 
 ################# Finish up #################
   STATUS=$?
