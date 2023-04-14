@@ -1,10 +1,11 @@
 {
   "name": "d3b-dynamic-range-mri",
-  "label": "D3b TIRU - Dynamic range estimation from MRI magnitude",
+  "label": "Dynamic range estimation from MRI magnitude",
   "description": "This package implements the DR estimation from Gabr et al. (2008).",
-  "author": "D3b-TIRU",
+  "author": "Ariana Familiar",
   "maintainer": "D3b-TIRU <flywheel@d3b.center>",
-  "source": "https://github.com/d3b-center/fw-dynamic-range-mri", 
+  "source": "https://github.com/d3b-center/fw-dynamic-range-mri",
+  "url": "",
   "version": "0.0.0",
   "license": "Apache-2.0",
   "custom": {
@@ -28,6 +29,13 @@
       "description": "Binary mask of head (1) vs. background (0).",
       "optional": false,
       "type": { "enum": ["nifti"] }
+    }
+  },
+  "config": {
+    "debug": {
+      "default": false,
+      "description": "Log debug messages",
+      "type": "boolean"
     }
   }
 }
