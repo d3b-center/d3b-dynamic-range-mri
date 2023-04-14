@@ -21,13 +21,13 @@
       "base": "file",
       "description": "Magnitude image.",
       "optional": false,
-      "type": { "enum": ["nifti"] },
+      "type": { "enum": ["nifti"] }
     },
     "head_mask": {
       "base": "file",
       "description": "Binary mask of head (1 vs. background/0).",
       "optional": false,
-      "type": { "enum": ["nifti"] },
+      "type": { "enum": ["nifti"] }
     }
   },
   "environment":{
