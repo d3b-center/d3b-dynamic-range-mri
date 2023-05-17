@@ -6,12 +6,12 @@
   "maintainer": "D3b-TIRU <flywheel@d3b.center>",
   "source": "https://github.com/d3b-center/fw-dynamic-range-mri",
   "url": "",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "Apache-2.0",
   "custom": {
     "gear-builder": {
       "category": "analysis",
-      "image": "chop.flywheel.io/d3b-dynamic-range-mri:0.0.0"
+      "image": "chop.flywheel.io/d3b-dynamic-range-mri:0.0.1"
     },
     "flywheel": {
       "suite": "D3b-TIRU"
