@@ -30,8 +30,9 @@ def calc_dr(img_path, headmask_path):
     ## load head mask
     mask = nib.load(headmask_path)
     mask_data = mask.get_fdata()
-    mask_data_reshaped = np.transpose(mask_data, (1,2,0)) # not 2,1,0
-    mask_data_reshaped = np.flipud(mask_data_reshaped)
+    mask_data_reshaped = mask_data
+    # mask_data_reshaped = np.transpose(mask_data, (1,2,0)) # not 2,1,0
+    # mask_data_reshaped = np.flipud(mask_data_reshaped)
 
     ## get the image background
     background_bool = np.logical_not(mask_data_reshaped) # create a background mask (opposite of head mask)
